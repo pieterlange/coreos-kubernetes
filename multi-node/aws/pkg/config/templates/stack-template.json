@@ -458,6 +458,11 @@
 	    "Protocol" : "TCP"
 	  }
 	],
+	{{if .MapPublicIPs}}
+	"Scheme": "internet-facing",
+	{{else}}
+	"Scheme": "internal",
+	{{end}}
 	"SecurityGroups" : [
 	  { "Ref" : "SecurityGroupElbAPIServer" }
 	]
